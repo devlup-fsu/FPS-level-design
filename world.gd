@@ -23,6 +23,9 @@ func _on_host_button_pressed():
 	multiplayer.peer_connected.connect(add_player)
 	multiplayer.peer_disconnected.connect(remove_player)
 	
+	var level = load("res://levels/one.tscn")
+	add_child(level.instantiate())
+
 	add_player(multiplayer.get_unique_id())
 	
 	## commenting removes upnp, instead uses just normal port OS level forwarding
@@ -39,6 +42,8 @@ func add_player(peer_id):
 	var player = Player.instantiate()
 	player.name = str(peer_id)
 	add_child(player)
+	# spawn player at random spawn point
+	player.position = $Environment/SpawnPoints.get_children().pick_random().position
 	if player.is_multiplayer_authority():
 		player.health_changed.connect(update_health_bar)
 
