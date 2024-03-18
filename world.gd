@@ -25,7 +25,8 @@ func _on_host_button_pressed():
 	
 	add_player(multiplayer.get_unique_id())
 	
-	upnp_setup()
+	## commenting removes upnp, instead uses just normal port OS level forwarding
+	# upnp_setup()
 
 func _on_join_button_pressed():
 	main_menu.hide()
