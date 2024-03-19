@@ -28,7 +28,8 @@ var hue_dict = {
 	set(value):
 		color = value
 		print(hue_dict[color])
-		set_color()
+		if Engine.is_editor_hint():
+			set_color()
 
 @export var size: Vector3 = Vector3.ONE:
 	set(value):
@@ -38,9 +39,9 @@ var hue_dict = {
 
 func set_color():
 	print(mat)
-	print($MeshInstance3D.mesh.get_surface_count())
+	#print($MeshInstance3D.mesh.get_surface_count())
 	# $MeshInstance3D.set_surface_override_material(0, load("res://prefabs/Block.tres"))
-	$MeshInstance3D.mesh.material.set_shader_parameter("Hue", hue_dict[color])
+	mat.set_shader_parameter("Hue", hue_dict[color])
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
