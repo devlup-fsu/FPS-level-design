@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=7 format=3 uid="uid://blqlh63iixltf"]
+[gd_resource type="VisualShader" load_steps=8 format=3 uid="uid://blqlh63iixltf"]
 
 [ext_resource type="Texture2D" uid="uid://dsbp8d7xy8jpn" path="res://addons/kenney_prototype_textures/red/texture_09.png" id="1_wr2oe"]
 
@@ -16,6 +16,9 @@ function = 2
 [sub_resource type="VisualShaderNodeVec3Parameter" id="VisualShaderNodeVec3Parameter_2a1jc"]
 parameter_name = "Hue"
 
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_53mwj"]
+input_name = "node_position_world"
+
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
@@ -26,8 +29,12 @@ uniform vec3 Hue;
 
 
 void fragment() {
+// Input:7
+	vec3 n_out7p0 = NODE_POSITION_WORLD;
+
+
 // Texture2D:2
-	vec4 n_out2p0 = texture(tex_frg_2, UV);
+	vec4 n_out2p0 = texture(tex_frg_2, vec2(n_out7p0.xy));
 
 
 	vec3 n_out5p0;
@@ -67,7 +74,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-809.333, 74.6667)
+graph_offset = Vector2(-837.995, -85.1026)
 nodes/fragment/0/position = Vector2(1080, 240)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_l8f5j")
 nodes/fragment/2/position = Vector2(-820, 160)
@@ -79,4 +86,6 @@ nodes/fragment/5/node = SubResource("VisualShaderNodeColorFunc_l23bc")
 nodes/fragment/5/position = Vector2(-360, 480)
 nodes/fragment/6/node = SubResource("VisualShaderNodeVec3Parameter_2a1jc")
 nodes/fragment/6/position = Vector2(-480, 680)
-nodes/fragment/connections = PackedInt32Array(3, 0, 0, 0, 5, 0, 4, 0, 2, 0, 5, 0, 4, 0, 3, 0, 6, 0, 4, 1)
+nodes/fragment/7/node = SubResource("VisualShaderNodeInput_53mwj")
+nodes/fragment/7/position = Vector2(-1700, 220)
+nodes/fragment/connections = PackedInt32Array(5, 0, 4, 0, 2, 0, 5, 0, 4, 0, 3, 0, 6, 0, 4, 1, 7, 0, 2, 0, 3, 0, 0, 0)
