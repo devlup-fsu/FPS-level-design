@@ -4,11 +4,21 @@ extends Node
 @onready var address_entry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/AddressEntry
 @onready var hud = $CanvasLayer/HUD
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
-
+@export var level_name: String
 
 const Player = preload("res://player.tscn")
 const PORT = 9999
 var enet_peer = ENetMultiplayerPeer.new()
+
+func pick_level():
+	var dir = DirAccess.open("res://levels/")
+	level_name = Array(dir.get_files()).pick_random()
+	print(level_name)
+
+func load_level():
+	print("level_name: ", level_name)
+	var level = load("res://levels/" + level_name)
+	add_child(level.instantiate())
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("quit"):
@@ -22,9 +32,9 @@ func _on_host_button_pressed():
 	multiplayer.multiplayer_peer = enet_peer
 	multiplayer.peer_connected.connect(add_player)
 	multiplayer.peer_disconnected.connect(remove_player)
-	
-	var level = load("res://levels/one.tscn")
-	add_child(level.instantiate())
+
+	pick_level()
+	load_level()
 
 	add_player(multiplayer.get_unique_id())
 	
@@ -39,11 +49,13 @@ func _on_join_button_pressed():
 	multiplayer.multiplayer_peer = enet_peer
 
 func add_player(peer_id):
+	
 	var player = Player.instantiate()
 	player.name = str(peer_id)
 	add_child(player)
 	# spawn player at random spawn point
 	player.position = $Environment/SpawnPoints.get_children().pick_random().position
+	
 	if player.is_multiplayer_authority():
 		player.health_changed.connect(update_health_bar)
 

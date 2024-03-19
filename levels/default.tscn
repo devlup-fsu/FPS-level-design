@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1j7an8woikyd"]
+[gd_scene load_steps=7 format=3 uid="uid://c1j7an8woikyd"]
 
 [ext_resource type="PackedScene" uid="uid://ckf3250w8jpro" path="res://models/Environment.glb" id="1_p4eel"]
 [ext_resource type="Texture2D" uid="uid://bugwfwhpqfp1n" path="res://addons/kenney_prototype_textures/dark/texture_09.png" id="2_dpxbx"]
 [ext_resource type="Texture2D" uid="uid://1opha1cxcimy" path="res://addons/kenney_prototype_textures/orange/texture_10.png" id="3_tbg6f"]
+[ext_resource type="PackedScene" uid="uid://wj1844b4fyw1" path="res://prefabs/Block.tscn" id="4_iavqe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_if5ix"]
 albedo_texture = ExtResource("2_dpxbx")
@@ -25,3 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5557, 5.51608, 0)
 
 [node name="Node3D2" type="Node3D" parent="SpawnPoints" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79781, 11.6666, 0)
+
+[node name="Block" parent="." index="2" instance=ExtResource("4_iavqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12179, 2)
+color = 1

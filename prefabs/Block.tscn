@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwyluljtw15dg"]
+
+[ext_resource type="Script" path="res://prefabs/Block.gd" id="1_t1146"]
+[ext_resource type="Shader" uid="uid://blqlh63iixltf" path="res://prefabs/Block.tres" id="2_0wm7m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6d2q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7op0j"]
+render_priority = 0
+shader = ExtResource("2_0wm7m")
+shader_parameter/Hue = Vector3(0, -1, -0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n3eob"]
+material = SubResource("ShaderMaterial_7op0j")
+
+[node name="Block" type="StaticBody3D"]
+script = ExtResource("1_t1146")
+color = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_p6d2q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_n3eob")
