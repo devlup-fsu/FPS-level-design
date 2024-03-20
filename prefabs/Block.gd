@@ -27,7 +27,7 @@ var hue_dict = {
 @export var color: BlockColor = BlockColor.GRAY:
 	set(value):
 		color = value
-		print(hue_dict[color])
+		# print(hue_dict[color])
 		if Engine.is_editor_hint():
 			set_color()
 
@@ -38,7 +38,7 @@ var hue_dict = {
 		$CollisionShape3D.shape.size = size
 
 func set_color():
-	print(mat)
+	# print(mat)
 	#print($MeshInstance3D.mesh.get_surface_count())
 	# $MeshInstance3D.set_surface_override_material(0, load("res://prefabs/Block.tres"))
 	mat.set_shader_parameter("Hue", hue_dict[color])

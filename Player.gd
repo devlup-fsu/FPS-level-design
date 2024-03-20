@@ -82,7 +82,7 @@ func receive_damage():
 	health -= 1
 	if health <= 0:
 		health = 3
-		position = Vector3.ZERO
+		position = get_parent().spawn_points.pick_random().position
 	health_changed.emit(health)
 
 func _on_animation_player_animation_finished(anim_name):
