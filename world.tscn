@@ -1,21 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8oqxmm2w2wvv"]
+[gd_scene load_steps=8 format=3 uid="uid://c8oqxmm2w2wvv"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6tkge"]
 [ext_resource type="Script" path="res://MultiplayerSpawner.gd" id="3_5dugv"]
 [ext_resource type="Texture2D" uid="uid://8ka2ui7sq36p" path="res://addons/kenney_particle_pack/circle_05.png" id="3_ehmxv"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5pdl"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_w2qqb"]
-sky_material = SubResource("ProceduralSkyMaterial_u5pdl")
-
-[sub_resource type="Environment" id="Environment_6knbf"]
-background_mode = 2
-sky = SubResource("Sky_w2qqb")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujyws"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -28,15 +15,16 @@ properties/0/path = NodePath(".:level_name")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
+[sub_resource type="Environment" id="Environment_hj2iy"]
+background_mode = 1
+background_color = Color(0.184314, 0.0666667, 0.211765, 1)
+
 [node name="World" type="Node"]
 script = ExtResource("1_6tkge")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6knbf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -130,6 +118,9 @@ script = ExtResource("3_5dugv")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_bfyx0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hj2iy")
 
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/HostButton" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/JoinButton" to="." method="_on_join_button_pressed"]

@@ -46,6 +46,10 @@ var hue_dict = {
 		dup.transform = transform
 		get_parent().add_child(dup)
 		dup.set_owner(get_tree().get_edited_scene_root())
+		var selection = EditorInterface.get_selection()
+		selection.clear()
+		selection.add_node(dup)
+		dup.name = "Block"
 
 func set_color():
 	# print(mat)
