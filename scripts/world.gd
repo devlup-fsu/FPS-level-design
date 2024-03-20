@@ -6,9 +6,12 @@ extends Node
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
 @export var level_name: String
 
-var spawn_points
+var spawn_points:
+		get:
+			spawn_points = $Environment/SpawnPoints.get_children()
+			return spawn_points
 
-const Player = preload("res://player.tscn")
+const Player = preload("res://scenes/player.tscn")
 const PORT = 9999
 var enet_peer = ENetMultiplayerPeer.new()
 
@@ -21,7 +24,6 @@ func load_level():
 	print("level_name: ", level_name)
 	var level = load("res://levels/" + level_name)
 	add_child(level.instantiate())
-	spawn_points = $Environment/SpawnPoints.get_children()
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("quit"):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq3xf6wtt7m6x"]
 
 [ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block.tscn" id="1_6mu4w"]
-[ext_resource type="Script" path="res://levels/Skyblox.gd" id="2_sq6b4"]
+[ext_resource type="Script" path="res://scripts/Skyblox.gd" id="2_sq6b4"]
 
 [node name="Environment" type="Node3D"]
 
