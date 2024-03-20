@@ -37,6 +37,16 @@ var hue_dict = {
 		$MeshInstance3D.mesh.size = size
 		$CollisionShape3D.shape.size = size
 
+@export_category("check this like it's a button 🧙‍♀️😵😮🦉✅")
+@export var duplicate: bool:
+	set(value):
+		var dup = load("res://prefabs/Block.tscn").instantiate()
+		dup.color = color
+		dup.size = size
+		dup.transform = transform
+		get_parent().add_child(dup)
+		dup.set_owner(get_tree().get_edited_scene_root())
+
 func set_color():
 	# print(mat)
 	#print($MeshInstance3D.mesh.get_surface_count())
