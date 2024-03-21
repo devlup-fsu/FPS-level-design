@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bam88m5h058xv"]
+[gd_scene load_steps=3 format=3 uid="uid://bam88m5h058xv"]
 
 [ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="1_tl2uc"]
 [ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="2_y5vvl"]
-[ext_resource type="Script" path="res://prefabs/Block/Block.gd" id="3_4im10"]
 
 [node name="Environment" type="Node3D"]
 
@@ -50,31 +49,26 @@ size = Vector3(22.82, 1, 50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.0688, 0)
 size = Vector3(200, 50, 200)
 
-[node name="Block2" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+[node name="Block2" parent="." instance=ExtResource("1_tl2uc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6353, -6.81516, 0.0451084)
-script = ExtResource("3_4im10")
 color = 0
 size = Vector3(22.82, 1, 50)
 
-[node name="Block3" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+[node name="Block3" parent="." instance=ExtResource("1_tl2uc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7306, -6.81516, 0.0451084)
-script = ExtResource("3_4im10")
 color = 1
 size = Vector3(22.82, 1, 50)
 
-[node name="Block4" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+[node name="Block4" parent="." instance=ExtResource("1_tl2uc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0735114, -7.59475, 0.0451084)
-script = ExtResource("3_4im10")
 size = Vector3(15.925, 4.315, 43.7)
 
-[node name="Block5" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+[node name="Block5" parent="." instance=ExtResource("1_tl2uc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3911, -3.91957, 0.0451084)
-script = ExtResource("3_4im10")
 color = 0
 size = Vector3(1, 5, 5)
 
-[node name="Block6" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+[node name="Block6" parent="." instance=ExtResource("1_tl2uc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2185, -3.91957, 0.0451084)
-script = ExtResource("3_4im10")
 color = 1
 size = Vector3(1, 5, 5)

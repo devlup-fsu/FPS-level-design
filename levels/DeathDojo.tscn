@@ -1,0 +1,224 @@
+[gd_scene load_steps=3 format=3 uid="uid://esa5eg4exs00"]
+
+[ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="1_xupa7"]
+[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="2_8wdm6"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Node3D2" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.1535, 47.6779, -0.176192)
+
+[node name="Node3D" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4446, 48.5916, -0.341155)
+
+[node name="HealHurtVolume" parent="." instance=ExtResource("1_xupa7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.0688, 0)
+size = Vector3(200, 50, 200)
+
+[node name="BlueBase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42679, 0, -0.428352)
+
+[node name="Health_Cabinent4" type="Node3D" parent="BlueBase"]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, 53.5853, 46.0548, 1.90735e-06)
+
+[node name="HealHurtVolume2" parent="BlueBase/Health_Cabinent4" instance=ExtResource("1_xupa7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="BlueBase/Health_Cabinent4" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Block3" parent="BlueBase" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.6345, 45.7268, 0.0451084)
+color = 1
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="BlueBase" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1224, 48.6224, 0.0451084)
+color = 1
+size = Vector3(1, 5, 5)
+
+[node name="RedBase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0662, 0, 0)
+
+[node name="Health_Cabinent3" type="Node3D" parent="RedBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5847, 46.2159, 0)
+
+[node name="HealHurtVolume2" parent="RedBase/Health_Cabinent3" instance=ExtResource("1_xupa7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="RedBase/Health_Cabinent3" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Block2" parent="RedBase" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.2506, 45.7268, 0.0451084)
+color = 0
+size = Vector3(22.82, 1, 50)
+
+[node name="Block5" parent="RedBase" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.0064, 48.6224, 0.0451084)
+color = 0
+size = Vector3(1, 5, 5)
+
+[node name="Dojo" type="Node3D" parent="."]
+
+[node name="Block9" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204332, -0.105788)
+size = Vector3(27.45, 24.585, 15.405)
+
+[node name="Block10" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25907, 22.3562, -0.809948)
+size = Vector3(30.455, 1, 17.13)
+
+[node name="Block11" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0987, 16.9152, -6.27808)
+color = 4
+size = Vector3(3, 10, 3)
+
+[node name="Block12" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3744, 16.9152, 4.56628)
+color = 4
+size = Vector3(3, 10, 3)
+
+[node name="Block13" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0036, 16.9152, 4.56628)
+color = 4
+size = Vector3(3, 10, 3)
+
+[node name="Block14" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2793, 16.9152, -6.27808)
+color = 4
+size = Vector3(3, 10, 3)
+
+[node name="Block15" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25907, 23.3638, -0.809948)
+size = Vector3(28.045, 1.205, 13.315)
+
+[node name="Block16" parent="Dojo" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25907, 24.5374, -0.809948)
+color = 4
+size = Vector3(25.235, 1.205, 11.025)
+
+[node name="Ramps" type="Node3D" parent="."]
+
+[node name="Block2" parent="Ramps" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(0.912905, -0.408171, 0, 0.408171, 0.912905, 0, 0, 0, 1, -27.2922, 5.9536, 0.436194)
+size = Vector3(30, 1, 10)
+
+[node name="Block3" parent="Ramps" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(0.0112167, -0.00501511, -0.999925, 0.408171, 0.912905, 0, 0.912837, -0.40814, 0.0122868, -0.678493, 5.9536, -21.4333)
+size = Vector3(30, 1, 10)
+
+[node name="Block5" parent="Ramps" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-0.912902, 0.40817, 0.00280997, 0.408171, 0.912905, -3.66175e-10, -0.00256523, 0.00114695, -0.999996, 27.208, 5.9536, -0.720924)
+size = Vector3(30, 1, 10)
+
+[node name="Block6" parent="Ramps" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-0.00825335, 0.00369017, 0.999959, 0.408171, 0.912905, -3.66175e-10, -0.912868, 0.408154, -0.00904075, 0.0157661, 5.9536, 21.0329)
+size = Vector3(30, 1, 10)
+
+[node name="Ring" type="Node3D" parent="."]
+
+[node name="Block" parent="Ring" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40.0362)
+size = Vector3(100, 1, 10)
+
+[node name="Block4" parent="Ring" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.2262)
+size = Vector3(100, 1, 10)
+
+[node name="Block7" parent="Ring" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.1275, 0, 7.62939e-06)
+size = Vector3(69.9, 1, 10)
+
+[node name="Block8" parent="Ring" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.8961, 0, -0.57855)
+size = Vector3(69.9, 1, 10)
+
+[node name="Rings" type="Node3D" parent="."]
+
+[node name="Ring2" type="Node3D" parent="Rings"]
+transform = Transform3D(4.12902, 0, 0, 0, 1, 0, 0, 0, 2.90731, 0, 14.8655, 0)
+
+[node name="Block" parent="Rings/Ring2" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40.0362)
+size = Vector3(100, 1, 10)
+
+[node name="Block4" parent="Rings/Ring2" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.2262)
+size = Vector3(100, 1, 10)
+
+[node name="Block7" parent="Rings/Ring2" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.1275, 0, 7.62939e-06)
+size = Vector3(69.9, 1, 10)
+
+[node name="Block8" parent="Rings/Ring2" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.8961, 0, -0.57855)
+size = Vector3(69.9, 1, 10)
+
+[node name="Ring3" type="Node3D" parent="Rings"]
+transform = Transform3D(4.12902, 0, 0, 0, 1, 0, 0, 0, 2.90731, 0, 26.6712, 0)
+
+[node name="Block" parent="Rings/Ring3" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40.0362)
+size = Vector3(100, 1, 10)
+
+[node name="Block4" parent="Rings/Ring3" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.2262)
+size = Vector3(100, 1, 10)
+
+[node name="Block7" parent="Rings/Ring3" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.1275, 0, 7.62939e-06)
+size = Vector3(69.9, 1, 10)
+
+[node name="Block8" parent="Rings/Ring3" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.8961, 0, -0.57855)
+size = Vector3(69.9, 1, 10)
+
+[node name="Ring4" type="Node3D" parent="Rings"]
+transform = Transform3D(4.12902, 0, 0, 0, 1, 0, 0, 0, 2.90731, 0, 38.6657, 0)
+
+[node name="Block" parent="Rings/Ring4" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40.0362)
+size = Vector3(100, 1, 10)
+
+[node name="Block4" parent="Rings/Ring4" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.2262)
+size = Vector3(100, 1, 10)
+
+[node name="Block7" parent="Rings/Ring4" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.1275, 0, 7.62939e-06)
+size = Vector3(69.9, 1, 10)
+
+[node name="Block8" parent="Rings/Ring4" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.8961, 0, -0.57855)
+size = Vector3(69.9, 1, 10)
+
+[node name="Ring5" type="Node3D" parent="Rings"]
+transform = Transform3D(4.12902, 0, 0, 0, 1, 0, 0, 0, 2.90731, 0, 50.4714, 0)
+
+[node name="Block" parent="Rings/Ring5" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40.0362)
+size = Vector3(100, 1, 10)
+
+[node name="Block4" parent="Rings/Ring5" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.2262)
+size = Vector3(100, 1, 10)
+
+[node name="Block7" parent="Rings/Ring5" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.1275, 0, 7.62939e-06)
+size = Vector3(69.9, 1, 10)
+
+[node name="Block8" parent="Rings/Ring5" instance=ExtResource("2_8wdm6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.8961, 0, -0.57855)
+size = Vector3(69.9, 1, 10)

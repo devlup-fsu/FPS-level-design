@@ -15,30 +15,31 @@ const Player = preload("res://scenes/player.tscn")
 const PORT = 9999
 var enet_peer = ENetMultiplayerPeer.new()
 
-func pick_level():
-	var dir = DirAccess.open("res://levels/")
-	level_name = Array(dir.get_files()).pick_random()
-	print(level_name)
-
 func load_level():
 	print("level_name: ", level_name)
-	var level = load("res://levels/" + level_name)
+	var level = load("res://levels/" + level_name + ".tscn")
 	add_child(level.instantiate())
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
 
 func _on_host_button_pressed():
 	main_menu.hide()
 	hud.show()
+	
+	var option_button = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/HBoxContainer/OptionButton
+	
+	if option_button.selected == -1:
+		return
+		
+	level_name = option_button.get_item_text(option_button.selected)
 	
 	enet_peer.create_server(PORT)
 	multiplayer.multiplayer_peer = enet_peer
 	multiplayer.peer_connected.connect(add_player)
 	multiplayer.peer_disconnected.connect(remove_player)
 
-	pick_level()
 	load_level()
 
 	add_player(multiplayer.get_unique_id())
