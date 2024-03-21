@@ -103,6 +103,7 @@ size = Vector3(3, 10, 3)
 
 [node name="Block15" parent="Dojo" instance=ExtResource("2_8wdm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25907, 23.3638, -0.809948)
+color = 5
 size = Vector3(28.045, 1.205, 13.315)
 
 [node name="Block16" parent="Dojo" instance=ExtResource("2_8wdm6")]
@@ -147,7 +148,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.896
 size = Vector3(69.9, 1, 10)
 
 [node name="Rings" type="Node3D" parent="."]
-transform = Transform3D(0.850811, 0.0100402, -0.525376, 0.4858, 0.366077, 0.793716, 0.200297, -0.93053, 0.306585, 0, 0, 0)
+transform = Transform3D(0.514338, 0.829429, 0.217954, -0.186033, -0.140186, 0.972491, 0.837167, -0.540736, 0.0821983, 0, 0, 0)
 script = ExtResource("3_oiqqh")
 
 [node name="Ring2" type="Node3D" parent="Rings"]
@@ -227,7 +228,7 @@ transform = Transform3D(0, -7.45058e-09, 1, -1.78814e-07, 1, 0, -1, -2.98023e-08
 size = Vector3(69.9, 1, 10)
 
 [node name="Rings2" type="Node3D" parent="."]
-transform = Transform3D(-0.883896, -0.256862, -0.390832, 0.432989, -0.765305, -0.476265, -0.176772, -0.590194, 0.787669, 0, 0, 0)
+transform = Transform3D(-0.66051, 0.728689, -0.180936, 0.0912523, -0.161288, -0.98268, -0.745251, -0.665581, 0.0400377, 0, 0, 0)
 script = ExtResource("3_oiqqh")
 
 [node name="Ring2" type="Node3D" parent="Rings2"]
@@ -307,7 +308,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.896
 size = Vector3(69.9, 1, 10)
 
 [node name="Rings3" type="Node3D" parent="."]
-transform = Transform3D(-0.922131, -0.383048, -0.0543035, 1.22709e-08, 0.140363, -0.9901, 0.386878, -0.913002, -0.129433, 0, 0, 0)
+transform = Transform3D(-0.881678, 0.345031, -0.321867, -5.96341e-08, -0.682135, -0.731226, -0.471852, -0.644706, 0.601423, 0, 0, 0)
 script = ExtResource("3_oiqqh")
 
 [node name="Ring2" type="Node3D" parent="Rings3"]
@@ -387,7 +388,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.896
 size = Vector3(69.9, 1, 10)
 
 [node name="Rings4" type="Node3D" parent="."]
-transform = Transform3D(0.298222, 0.687015, -0.662626, 0.573787, -0.683812, -0.450743, -0.762779, -0.245785, -0.598128, 0, 0, 0)
+transform = Transform3D(0.800396, 0.599354, 0.011843, 0.134483, -0.160271, -0.977869, -0.584191, 0.784275, -0.208883, 0, 0, 0)
 script = ExtResource("3_oiqqh")
 
 [node name="Ring2" type="Node3D" parent="Rings4"]
