@@ -6,10 +6,8 @@ extends Node
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
 @export var level_name: String
 
-var spawn_points:
-		get:
-			spawn_points = $Environment/SpawnPoints.get_children()
-			return spawn_points
+var red_team_size = 0
+var blue_team_size = 0
 
 const Player = preload("res://scenes/player.tscn")
 const PORT = 9999
@@ -51,16 +49,24 @@ func _on_join_button_pressed():
 	main_menu.hide()
 	hud.show()
 	
+	if address_entry.text == "":
+		address_entry.text = "localhost"
+	
 	enet_peer.create_client(address_entry.text, PORT)
 	multiplayer.multiplayer_peer = enet_peer
 
 func add_player(peer_id):
-	
 	var player = Player.instantiate()
 	player.name = str(peer_id)
+	
 	add_child(player)
-	# spawn player at random spawn point
-	player.position = spawn_points.pick_random().position
+	
+	if red_team_size > blue_team_size:
+		player.set_team.rpc("blue")
+		blue_team_size += 1
+	else:
+		player.set_team.rpc("red")
+		red_team_size += 1
 	
 	if player.is_multiplayer_authority():
 		player.health_changed.connect(update_health_bar)
@@ -68,6 +74,10 @@ func add_player(peer_id):
 func remove_player(peer_id):
 	var player = get_node_or_null(str(peer_id))
 	if player:
+		if player.team == "red":
+			red_team_size -= 1
+		elif player.team == "blue":
+			blue_team_size -= 1
 		player.queue_free()
 
 func update_health_bar(health_value):

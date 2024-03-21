@@ -9,17 +9,11 @@
 [node name="SpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Node3D" type="Node3D" parent="SpawnPoints"]
+[node name="Red" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.2839, 4.15777, -3.93948)
 
-[node name="Node3D2" type="Node3D" parent="SpawnPoints"]
+[node name="Blue" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.2697, 2.19532, 0)
-
-[node name="Node3D3" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8278, 10.048, -52.7899)
-
-[node name="Node3D4" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.6624, 11.3843, 49.4209)
 
 [node name="Blue Base" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -392,7 +386,7 @@ color = 4
 size = Vector3(30.075, 1, 9.315)
 
 [node name="Skyblox" type="Node3D" parent="."]
-transform = Transform3D(0.90011, 0.162992, -0.404024, -1.4003e-07, -0.927379, -0.374124, -0.435662, 0.336753, -0.834743, 0, 0, 0)
+transform = Transform3D(-0.176837, -0.137289, -0.974618, 1.4952e-07, 0.990224, -0.139487, 0.98424, -0.0246666, -0.175108, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox" instance=ExtResource("1_6mu4w")]
@@ -452,7 +446,7 @@ transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.
 size = Vector3(100, 100, 100)
 
 [node name="Skyblox" type="Node3D" parent="Skyblox"]
-transform = Transform3D(0.900545, 0.163059, -0.403025, -1.39974e-07, -0.927004, -0.375053, -0.434762, 0.337752, -0.834808, 0, 0, 0)
+transform = Transform3D(-0.17782, -0.136283, -0.97458, 1.49541e-07, 0.990364, -0.13849, 0.984063, -0.0246264, -0.176106, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox/Skyblox" instance=ExtResource("1_6mu4w")]
@@ -512,7 +506,7 @@ transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.
 size = Vector3(100, 100, 100)
 
 [node name="Skyblox2" type="Node3D" parent="."]
-transform = Transform3D(-0.995383, 0.0425858, -0.0860127, -1.35318e-07, -0.896174, -0.443703, -0.0959778, -0.441655, 0.892036, 0, 0, 0)
+transform = Transform3D(0.663934, 0.0476088, 0.746273, 1.50689e-07, 0.997971, -0.063666, -0.747791, 0.0422702, 0.662587, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox2" instance=ExtResource("1_6mu4w")]
@@ -572,7 +566,7 @@ transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.
 size = Vector3(100, 100, 100)
 
 [node name="Skyblox" type="Node3D" parent="Skyblox2"]
-transform = Transform3D(0.900545, 0.163059, -0.403025, -1.39974e-07, -0.927004, -0.375053, -0.434762, 0.337752, -0.834808, 0, 0, 0)
+transform = Transform3D(-0.17782, -0.136283, -0.97458, 1.49541e-07, 0.990364, -0.13849, 0.984063, -0.0246264, -0.176106, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox2/Skyblox" instance=ExtResource("1_6mu4w")]

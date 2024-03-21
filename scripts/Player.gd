@@ -7,6 +7,8 @@ signal health_changed(health_value)
 @onready var muzzle_flash = $Camera3D/Pistol/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
 
+@export var team = "djiajsd"
+
 const MAX_HEALTH: int = 3
 
 var health = 3
@@ -19,6 +21,12 @@ var gravity = 20.0
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
+
+@rpc("any_peer", "call_local", "reliable")
+func set_team(team: String):
+	self.team = team
+	_set_team_color()
+	_move_to_spawn()
 
 func _ready():
 	if not is_multiplayer_authority(): return
@@ -39,8 +47,9 @@ func _unhandled_input(event):
 		play_shoot_effects.rpc()
 		if raycast.is_colliding():
 			var hit = raycast.get_collider()
-			if hit.has_method("receive_damage"):
-				hit.receive_damage.rpc_id(hit.get_multiplayer_authority())
+			if hit.has_method("receive_damage") and "team" in hit:
+				if hit.team != team:
+					hit.receive_damage.rpc_id(hit.get_multiplayer_authority())
 
 func _physics_process(delta):
 	if not is_multiplayer_authority(): return
@@ -73,6 +82,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+
+func _process(delta):
+	_set_team_color()
+
+
 @rpc("call_local")
 func play_shoot_effects():
 	anim_player.stop()
@@ -88,7 +102,7 @@ func receive_damage():
 func _health_changed():
 	if health <= 0:
 		health = MAX_HEALTH
-		position = get_parent().spawn_points.pick_random().position
+		_move_to_spawn()
 	if health > MAX_HEALTH:
 		health = MAX_HEALTH
 	health_changed.emit(health)
@@ -96,3 +110,17 @@ func _health_changed():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
 		anim_player.play("idle")
+
+
+func _move_to_spawn():
+	if team == "red":
+		position = get_node("../Environment/SpawnPoints/Red").position
+	elif team == "blue":
+		position = get_node("../Environment/SpawnPoints/Blue").position
+
+
+func _set_team_color():
+	if team == "red":
+		$MeshInstance3D.mesh.material.albedo_color = Color.RED
+	elif team == "blue":
+		$MeshInstance3D.mesh.material.albedo_color = Color.BLUE

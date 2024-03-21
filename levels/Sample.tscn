@@ -8,11 +8,11 @@
 [node name="SpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Node3D2" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3237, -4.86406, -0.176192)
-
-[node name="Node3D" type="Node3D" parent="SpawnPoints"]
+[node name="Red" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.119, -3.95036, -0.341155)
+
+[node name="Blue" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3237, -4.86406, -0.176192)
 
 [node name="Health_Cabinent4" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, 18.6814, -6.48716, 1.90735e-06)
