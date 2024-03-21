@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq3xf6wtt7m6x"]
+[gd_scene load_steps=4 format=3 uid="uid://cq3xf6wtt7m6x"]
 
-[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block.tscn" id="1_6mu4w"]
+[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="1_6mu4w"]
 [ext_resource type="Script" path="res://scripts/Skyblox.gd" id="2_sq6b4"]
+[ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="3_lxhyp"]
 
 [node name="Environment" type="Node3D"]
 
@@ -144,7 +145,7 @@ color = 3
 size = Vector3(30, 1, 10)
 
 [node name="Block2" parent="Blue Base/Upstairs" instance=ExtResource("1_6mu4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0436, 6.79226, 49.7724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3246, 6.79226, 49.7724)
 color = 3
 size = Vector3(30, 1, 30)
 
@@ -157,6 +158,45 @@ size = Vector3(10, 1, 10)
 transform = Transform3D(0.690226, 0, 0.723594, 0, 1, 0, -0.723594, 0, 0.690226, -37.1654, 7.70942, 42.6867)
 color = 1
 size = Vector3(1, 10, 10)
+
+[node name="Health_Cabinent4" type="Node3D" parent="Blue Base"]
+transform = Transform3D(0.733255, 0, -0.679953, 0, 1, 0, 0.679953, 0, 0.733255, -43.2027, -5.25569, -56.32)
+
+[node name="HealHurtVolume2" parent="Blue Base/Health_Cabinent4" instance=ExtResource("3_lxhyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Blue Base/Health_Cabinent4" instance=ExtResource("1_6mu4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Health_Cabinent5" type="Node3D" parent="Blue Base"]
+transform = Transform3D(0.704733, 0, 0.709472, 0, 1, 0, -0.709472, 0, 0.704733, -37.7197, 7.1925, 43.0667)
+
+[node name="HealHurtVolume2" parent="Blue Base/Health_Cabinent5" instance=ExtResource("3_lxhyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Blue Base/Health_Cabinent5" instance=ExtResource("1_6mu4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Health_Cabinent6" type="Node3D" parent="Blue Base"]
+transform = Transform3D(0.999463, 0, 0.0327539, 0, 1, 0, -0.0327539, 0, 0.999463, -49.4317, 0.469232, -4.30839)
+
+[node name="HealHurtVolume2" parent="Blue Base/Health_Cabinent6" instance=ExtResource("3_lxhyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Blue Base/Health_Cabinent6" instance=ExtResource("1_6mu4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
 
 [node name="Red Base" type="Node3D" parent="."]
 
@@ -281,7 +321,7 @@ color = 2
 size = Vector3(30, 1, 10)
 
 [node name="Block2" parent="Red Base/Upstairs" instance=ExtResource("1_6mu4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0436, 6.79226, 49.7724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5044, 6.79226, 49.7724)
 color = 2
 size = Vector3(30, 1, 30)
 
@@ -294,6 +334,45 @@ size = Vector3(10, 1, 10)
 transform = Transform3D(-0.690226, 0, -0.723594, 0, 1, 0, 0.723594, 0, -0.690226, -38.2569, 7.70942, 42.9832)
 color = 0
 size = Vector3(1, 10, 10)
+
+[node name="Health_Cabinent3" type="Node3D" parent="Red Base"]
+transform = Transform3D(0.710591, 0, -0.703605, 0, 1, 0, 0.703605, 0, 0.710591, -41.0481, -5.16328, -53.852)
+
+[node name="HealHurtVolume2" parent="Red Base/Health_Cabinent3" instance=ExtResource("3_lxhyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Red Base/Health_Cabinent3" instance=ExtResource("1_6mu4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Health_Cabinent2" type="Node3D" parent="Red Base"]
+transform = Transform3D(0.727593, 0, 0.686009, 0, 1, 0, -0.686009, 0, 0.727593, -38.8892, 7.45004, 43.5097)
+
+[node name="HealHurtVolume2" parent="Red Base/Health_Cabinent2" instance=ExtResource("3_lxhyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Red Base/Health_Cabinent2" instance=ExtResource("1_6mu4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Health_Cabinent" type="Node3D" parent="Red Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0278, 0.534302, -3.45029)
+
+[node name="HealHurtVolume2" parent="Red Base/Health_Cabinent" instance=ExtResource("3_lxhyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Red Base/Health_Cabinent" instance=ExtResource("1_6mu4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
 
 [node name="Center" type="Node3D" parent="."]
 
@@ -313,7 +392,7 @@ color = 4
 size = Vector3(30.075, 1, 9.315)
 
 [node name="Skyblox" type="Node3D" parent="."]
-transform = Transform3D(-0.967507, 0.0639305, -0.244629, 0, -0.967507, -0.252845, -0.252845, -0.244629, 0.93607, 0, 0, 0)
+transform = Transform3D(0.90011, 0.162992, -0.404024, -1.4003e-07, -0.927379, -0.374124, -0.435662, 0.336753, -0.834743, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox" instance=ExtResource("1_6mu4w")]
@@ -373,7 +452,7 @@ transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.
 size = Vector3(100, 100, 100)
 
 [node name="Skyblox" type="Node3D" parent="Skyblox"]
-transform = Transform3D(-0.967254, 0.0644206, -0.245501, 0, -0.967254, -0.253812, -0.253812, -0.245501, 0.935579, 0, 0, 0)
+transform = Transform3D(0.900545, 0.163059, -0.403025, -1.39974e-07, -0.927004, -0.375053, -0.434762, 0.337752, -0.834808, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox/Skyblox" instance=ExtResource("1_6mu4w")]
@@ -433,7 +512,7 @@ transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.
 size = Vector3(100, 100, 100)
 
 [node name="Skyblox2" type="Node3D" parent="."]
-transform = Transform3D(0.756516, -0.155409, 0.635241, 0, -0.971354, -0.237637, 0.653975, 0.179776, -0.734845, 0, 0, 0)
+transform = Transform3D(-0.995383, 0.0425858, -0.0860127, -1.35318e-07, -0.896174, -0.443703, -0.0959778, -0.441655, 0.892036, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox2" instance=ExtResource("1_6mu4w")]
@@ -493,7 +572,7 @@ transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.
 size = Vector3(100, 100, 100)
 
 [node name="Skyblox" type="Node3D" parent="Skyblox2"]
-transform = Transform3D(-0.967254, 0.0644206, -0.245501, 0, -0.967254, -0.253812, -0.253812, -0.245501, 0.935579, 0, 0, 0)
+transform = Transform3D(0.900545, 0.163059, -0.403025, -1.39974e-07, -0.927004, -0.375053, -0.434762, 0.337752, -0.834808, 0, 0, 0)
 script = ExtResource("2_sq6b4")
 
 [node name="Block4" parent="Skyblox2/Skyblox" instance=ExtResource("1_6mu4w")]
@@ -551,3 +630,7 @@ size = Vector3(100, 100, 100)
 [node name="Block14" parent="Skyblox2/Skyblox" instance=ExtResource("1_6mu4w")]
 transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.51975, 0.421525, 0.78795, 0.448834, -204.932, -241.949, 35.648)
 size = Vector3(100, 100, 100)
+
+[node name="HealHurtVolume" parent="." instance=ExtResource("3_lxhyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.0688, 0)
+size = Vector3(200, 50, 200)

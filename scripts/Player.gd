@@ -7,6 +7,8 @@ signal health_changed(health_value)
 @onready var muzzle_flash = $Camera3D/Pistol/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
 
+const MAX_HEALTH: int = 3
+
 var health = 3
 
 const SPEED = 10.0
@@ -80,9 +82,14 @@ func play_shoot_effects():
 @rpc("any_peer")
 func receive_damage():
 	health -= 1
+	_health_changed()
+	
+func _health_changed():
 	if health <= 0:
-		health = 3
+		health = MAX_HEALTH
 		position = get_parent().spawn_points.pick_random().position
+	if health > MAX_HEALTH:
+		health = MAX_HEALTH
 	health_changed.emit(health)
 
 func _on_animation_player_animation_finished(anim_name):

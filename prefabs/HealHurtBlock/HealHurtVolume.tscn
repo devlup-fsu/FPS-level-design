@@ -1,0 +1,120 @@
+[gd_scene load_steps=12 format=3 uid="uid://caha4aqr2nnpy"]
+
+[ext_resource type="Script" path="res://prefabs/HealHurtBlock/HealHurtVolume.gd" id="1_g0k63"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6d2q"]
+resource_local_to_scene = true
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_nvehk"]
+constant = Color(0.578125, 0.0317402, 0, 1)
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_vn1m4"]
+constant = Color(0, 0.494118, 0.0228519, 1)
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_da7r0"]
+default_input_values = [0, 1.0, 1, 0.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_ghhev"]
+constant = Color(0.322917, 0.322917, 0.322917, 1)
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_wg5me"]
+constant = 0.5
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_vqe8v"]
+parameter_name = "affect"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShader" id="VisualShader_gk8l3"]
+resource_local_to_scene = true
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform float affect = 1;
+
+
+
+void fragment() {
+// FloatParameter:7
+	float n_out7p0 = affect;
+
+
+// ColorConstant:5
+	vec4 n_out5p0 = vec4(0.322917, 0.322917, 0.322917, 1.000000);
+
+
+// ColorConstant:3
+	vec4 n_out3p0 = vec4(0.000000, 0.494118, 0.022852, 1.000000);
+
+
+// ColorConstant:2
+	vec4 n_out2p0 = vec4(0.578125, 0.031740, 0.000000, 1.000000);
+
+
+	vec3 n_out4p0;
+// If:4
+	float n_in4p1 = 0.00000;
+	float n_in4p2 = 0.00001;
+	if(abs(n_out7p0 - n_in4p1) < n_in4p2)
+	{
+		n_out4p0 = vec3(n_out5p0.xyz);
+	}
+	else if(n_out7p0 < n_in4p1)
+	{
+		n_out4p0 = vec3(n_out2p0.xyz);
+	}
+	else
+	{
+		n_out4p0 = vec3(n_out3p0.xyz);
+	}
+
+
+// FloatConstant:6
+	float n_out6p0 = 0.500000;
+
+
+// Output:0
+	ALBEDO = n_out4p0;
+	ALPHA = n_out6p0;
+
+
+}
+"
+graph_offset = Vector2(-251.504, -63.5575)
+nodes/fragment/0/position = Vector2(1080, 240)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_nvehk")
+nodes/fragment/2/position = Vector2(280, 460)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorConstant_vn1m4")
+nodes/fragment/3/position = Vector2(280, 360)
+nodes/fragment/4/node = SubResource("VisualShaderNodeIf_da7r0")
+nodes/fragment/4/position = Vector2(520, 140)
+nodes/fragment/5/node = SubResource("VisualShaderNodeColorConstant_ghhev")
+nodes/fragment/5/position = Vector2(280, 260)
+nodes/fragment/6/node = SubResource("VisualShaderNodeFloatConstant_wg5me")
+nodes/fragment/6/position = Vector2(740, 340)
+nodes/fragment/7/node = SubResource("VisualShaderNodeFloatParameter_vqe8v")
+nodes/fragment/7/position = Vector2(-100, 140)
+nodes/fragment/connections = PackedInt32Array(5, 0, 4, 3, 4, 0, 0, 0, 6, 0, 0, 1, 7, 0, 4, 0, 3, 0, 4, 4, 2, 0, 4, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsiec"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("VisualShader_gk8l3")
+shader_parameter/affect = -3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_wgq8g"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_lsiec")
+
+[node name="HealHurtVolume" type="Area3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_g0k63")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_p6d2q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_wgq8g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

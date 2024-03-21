@@ -9,7 +9,8 @@ enum BlockColor {
 	DARKBLUE,
 	WHITE,
 	GRAY,
-	BLACK
+	BLACK,
+	GREEN
 }
 
 var hue_dict = {
@@ -20,6 +21,7 @@ var hue_dict = {
 	BlockColor.WHITE : Vector3(0,-1,-0.4),
 	BlockColor.GRAY : Vector3(0,-1,-0.7),
 	BlockColor.BLACK : Vector3(0,-1,-0.9),
+	BlockColor.GREEN : Vector3(0.4,0,0),
 }
 
 @onready var mat: Material = $MeshInstance3D.mesh.material
@@ -40,16 +42,17 @@ var hue_dict = {
 @export_category("check this like it's a button 🧙‍♀️😵😮🦉✅")
 @export var duplicate: bool:
 	set(value):
-		var dup = load("res://prefabs/Block.tscn").instantiate()
-		dup.color = color
-		dup.size = size
-		dup.transform = transform
-		get_parent().add_child(dup)
-		dup.set_owner(get_tree().get_edited_scene_root())
-		var selection = EditorInterface.get_selection()
-		selection.clear()
-		selection.add_node(dup)
-		dup.name = "Block"
+		if Engine.is_editor_hint():
+			var dup = load("res://prefabs/Block/Block.tscn").instantiate()
+			dup.color = color
+			dup.size = size
+			dup.transform = transform
+			get_parent().add_child(dup)
+			dup.set_owner(get_tree().get_edited_scene_root())
+			var selection = EditorInterface.get_selection()
+			selection.clear()
+			selection.add_node(dup)
+			dup.name = "Block"
 
 func set_color():
 	# print(mat)

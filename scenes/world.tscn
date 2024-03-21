@@ -18,6 +18,9 @@ properties/0/replication_mode = 1
 [sub_resource type="Environment" id="Environment_hj2iy"]
 background_mode = 1
 background_color = Color(0.184314, 0.0666667, 0.211765, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.301961, 0.301961, 0.301961, 1)
+ambient_light_energy = 0.3
 fog_enabled = true
 fog_light_color = Color(0.223529, 0.054902, 0.270588, 1)
 fog_density = 0.0055

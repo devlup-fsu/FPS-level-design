@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://bam88m5h058xv"]
+
+[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="1_tl2uc"]
+[ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="2_y5vvl"]
+[ext_resource type="Script" path="res://prefabs/Block/Block.gd" id="3_4im10"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Node3D2" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3237, -4.86406, -0.176192)
+
+[node name="Node3D" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.119, -3.95036, -0.341155)
+
+[node name="Health_Cabinent4" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, 18.6814, -6.48716, 1.90735e-06)
+
+[node name="HealHurtVolume2" parent="Health_Cabinent4" instance=ExtResource("2_y5vvl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Health_Cabinent4" instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Health_Cabinent3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9694, -6.32607, 0)
+
+[node name="HealHurtVolume2" parent="Health_Cabinent3" instance=ExtResource("2_y5vvl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Health_Cabinent3" instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Block" parent="." instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0735114, -7.59475, 0.0451084)
+color = 5
+size = Vector3(22.82, 1, 50)
+
+[node name="HealHurtVolume" parent="." instance=ExtResource("2_y5vvl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.0688, 0)
+size = Vector3(200, 50, 200)
+
+[node name="Block2" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6353, -6.81516, 0.0451084)
+script = ExtResource("3_4im10")
+color = 0
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7306, -6.81516, 0.0451084)
+script = ExtResource("3_4im10")
+color = 1
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0735114, -7.59475, 0.0451084)
+script = ExtResource("3_4im10")
+size = Vector3(15.925, 4.315, 43.7)
+
+[node name="Block5" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3911, -3.91957, 0.0451084)
+script = ExtResource("3_4im10")
+color = 0
+size = Vector3(1, 5, 5)
+
+[node name="Block6" type="StaticBody3D" parent="." instance=ExtResource("1_tl2uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2185, -3.91957, 0.0451084)
+script = ExtResource("3_4im10")
+color = 1
+size = Vector3(1, 5, 5)
