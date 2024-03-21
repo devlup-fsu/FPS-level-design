@@ -63,3 +63,8 @@ func set_color():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_color()
+
+
+func _on_area_3d_body_entered(body):
+	body.velocity.y = 40
+	print("jump")

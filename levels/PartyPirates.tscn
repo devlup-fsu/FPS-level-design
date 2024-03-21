@@ -1,0 +1,438 @@
+[gd_scene load_steps=4 format=3 uid="uid://whkktkv2c2h6"]
+
+[ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="1_hsb7j"]
+[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="2_0lbg2"]
+[ext_resource type="Script" path="res://prefabs/Block/Block.gd" id="3_hq4kq"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Red" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.4914, -3.95036, -9.41663)
+
+[node name="Blue" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4134, -4.86406, -9.74283)
+
+[node name="Fallbox" parent="." instance=ExtResource("1_hsb7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.0688, 0)
+size = Vector3(300, 50, 300)
+
+[node name="BlueShip" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3592, -6.81516, 0.0451084)
+
+[node name="Block12" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.809304, 0, 0.58739, 0, 1, 0, -0.58739, 0, 0.809304, -14.2581, -6.9361, -25.5839)
+color = 1
+size = Vector3(8, 15, 5)
+
+[node name="Block13" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.791608, 0, -0.61103, 0, 1, 0, 0.61103, 0, 0.791608, -0.83485, -6.86543, -25.6291)
+color = 1
+size = Vector3(8, 15, 5)
+
+[node name="Block14" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51205, 20.486, 0)
+color = 1
+size = Vector3(1, 40, 1)
+
+[node name="Block15" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 0.480591, 0.876945, 0, -0.876945, 0.480591, -7.51205, 29.2447, -3.47149)
+color = 1
+size = Vector3(22.82, 1, 15)
+
+[node name="Block16" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, -0.482167, 0.87608, 0, -0.87608, -0.482167, -7.51205, 16.917, -3.47149)
+color = 1
+size = Vector3(22.82, 1, 15)
+
+[node name="Block17" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51205, -6.9118, 0)
+color = 1
+size = Vector3(22.82, 15, 50)
+
+[node name="Block18" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51205, -6.88234, -27.5414)
+color = 1
+size = Vector3(10, 15, 5)
+
+[node name="Block19" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51205, 5.58885, 20.0401)
+color = 1
+size = Vector3(22.8, 10, 10)
+
+[node name="Block20" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.809304, 0, 0.58739, 0, 1, 0, -0.58739, 0, 0.809304, -14.2581, -6.9361, -25.5839)
+color = 1
+size = Vector3(8, 15, 5)
+
+[node name="Block21" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.791608, 0, -0.61103, 0, 1, 0, 0.61103, 0, 0.791608, -0.83485, -6.86543, -25.6291)
+color = 1
+size = Vector3(8, 15, 5)
+
+[node name="Block22" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51205, 20.486, 0)
+color = 1
+size = Vector3(1, 40, 1)
+
+[node name="Block23" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 0.480591, 0.876945, 0, -0.876945, 0.480591, -7.51205, 29.2447, -3.47149)
+color = 1
+size = Vector3(22.82, 1, 15)
+
+[node name="Block24" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, -0.482167, 0.87608, 0, -0.87608, -0.482167, -7.51205, 16.917, -3.47149)
+color = 1
+size = Vector3(22.82, 1, 15)
+
+[node name="Block25" parent="BlueShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0214, -0.741699, -7.17942)
+color = 2
+size = Vector3(10, 1, 3)
+
+[node name="RedShip" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6353, -6.81516, 0.0451084)
+
+[node name="Block2" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9742, -6.9118, 0)
+color = 0
+size = Vector3(22.82, 15, 50)
+
+[node name="Block" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9742, -6.88234, -27.5414)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(10, 15, 5)
+
+[node name="Block3" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9742, 5.58885, 20.0401)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(22.8, 10, 10)
+
+[node name="Block4" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.809304, 0, 0.58739, 0, 1, 0, -0.58739, 0, 0.809304, -53.7202, -6.9361, -25.5839)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(8, 15, 5)
+
+[node name="Block5" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.791608, 0, -0.61103, 0, 1, 0, 0.61103, 0, 0.791608, -40.297, -6.86543, -25.6291)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(8, 15, 5)
+
+[node name="Block6" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9742, 20.486, 0)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(1, 40, 1)
+
+[node name="Block7" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 0.480591, 0.876945, 0, -0.876945, 0.480591, -46.9742, 29.2447, -3.47149)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(22.82, 1, 15)
+
+[node name="Block8" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, -0.482167, 0.87608, 0, -0.87608, -0.482167, -46.9742, 16.917, -3.47149)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(22.82, 1, 15)
+
+[node name="Block9" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9742, -6.9118, 0)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(22.82, 15, 50)
+
+[node name="Block10" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9742, -6.88234, -27.5414)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(10, 15, 5)
+
+[node name="Block11" type="StaticBody3D" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.9742, 5.58885, 20.0401)
+script = ExtResource("3_hq4kq")
+color = 0
+size = Vector3(22.8, 10, 10)
+
+[node name="Block12" parent="RedShip" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0918, -0.741699, -7.17942)
+color = 2
+size = Vector3(10, 1, 3)
+
+[node name="Tree" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.921606, -0.388127, 0, 0.388127, 0.921606, 0, -1.69821, 16.4357)
+
+[node name="Block5" type="StaticBody3D" parent="Tree" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, -3.38236, 0.00874519)
+script = ExtResource("3_hq4kq")
+color = 4
+size = Vector3(3, 15, 3)
+
+[node name="Block6" type="StaticBody3D" parent="Tree" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, 4.70844, 0.00874519)
+script = ExtResource("3_hq4kq")
+color = 7
+size = Vector3(10, 2, 10)
+
+[node name="Block7" type="StaticBody3D" parent="Tree" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.912041, 0.410098, 0, -0.410098, 0.912041, 0, 0, 0, 1, 6.09371, 3.95013, 0.00874519)
+script = ExtResource("3_hq4kq")
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block8" parent="Tree" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.89301, -0.450036, 0, 0.450036, 0.89301, 0, 0, 0, 1, -5.94521, 3.91093, 0.00874519)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block9" parent="Tree" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, 0.450036, 0.89301, -5.26703e-10, -0.892841, 0.449951, -0.0194592, -0.225039, 3.82747, 6.15491)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block10" parent="Tree" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, -0.536919, 0.843468, -0.0167199, -0.843455, -0.537108, -0.00995517, -0.225039, 3.82747, -5.95438)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Tree2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.915417, 0.402507, 0, -0.402507, 0.915417, 0, -1.69821, -16.0667)
+
+[node name="Block5" parent="Tree2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, -3.38236, 0.00874519)
+color = 4
+size = Vector3(3, 15, 3)
+
+[node name="Block6" parent="Tree2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, 4.70844, 0.00874519)
+color = 7
+size = Vector3(10, 2, 10)
+
+[node name="Block7" parent="Tree2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.912041, 0.410098, 0, -0.410098, 0.912041, 0, 0, 0, 1, 6.09371, 3.95013, 0.00874519)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block8" parent="Tree2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.89301, -0.450036, 0, 0.450036, 0.89301, 0, 0, 0, 1, -5.94521, 3.91093, 0.00874519)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block9" parent="Tree2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, 0.450036, 0.89301, -5.26703e-10, -0.892841, 0.449951, -0.0194592, -0.225039, 3.82747, 6.15491)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block10" parent="Tree2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, -0.536919, 0.843468, -0.0167199, -0.843455, -0.537108, -0.00995517, -0.225039, 3.82747, -5.95438)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Tree3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.6414, -4.01733, -0.370348)
+
+[node name="Block5" parent="Tree3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, -3.38236, 0.00874519)
+color = 4
+size = Vector3(3, 15, 3)
+
+[node name="Block6" parent="Tree3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, 4.70844, 0.00874519)
+color = 7
+size = Vector3(10, 2, 10)
+
+[node name="Block7" parent="Tree3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.912041, 0.410098, 0, -0.410098, 0.912041, 0, 0, 0, 1, 6.09371, 3.95013, 0.00874519)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block8" parent="Tree3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.89301, -0.450036, 0, 0.450036, 0.89301, 0, 0, 0, 1, -5.94521, 3.91093, 0.00874519)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block9" parent="Tree3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, 0.450036, 0.89301, -5.26703e-10, -0.892841, 0.449951, -0.0194592, -0.225039, 3.82747, 6.15491)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block10" parent="Tree3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, -0.536919, 0.843468, -0.0167199, -0.843455, -0.537108, -0.00995517, -0.225039, 3.82747, -5.95438)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Tree4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6168, -4.01733, -0.370348)
+
+[node name="Block5" parent="Tree4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, -3.38236, 0.00874519)
+color = 4
+size = Vector3(3, 15, 3)
+
+[node name="Block6" parent="Tree4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0416927, 4.70844, 0.00874519)
+color = 7
+size = Vector3(10, 2, 10)
+
+[node name="Block7" parent="Tree4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.912041, 0.410098, 0, -0.410098, 0.912041, 0, 0, 0, 1, 6.09371, 3.95013, 0.00874519)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block8" parent="Tree4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.89301, -0.450036, 0, 0.450036, 0.89301, 0, 0, 0, 1, -5.94521, 3.91093, 0.00874519)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block9" parent="Tree4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, 0.450036, 0.89301, -5.26703e-10, -0.892841, 0.449951, -0.0194592, -0.225039, 3.82747, 6.15491)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Block10" parent="Tree4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(-0.0173772, 0.00875735, 0.999811, -0.536919, 0.843468, -0.0167199, -0.843455, -0.537108, -0.00995517, -0.225039, 3.82747, -5.95438)
+color = 7
+size = Vector3(4, 2, 8)
+
+[node name="Water" parent="." instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.6999, 0)
+color = 1
+size = Vector3(1000, 1, 1000)
+
+[node name="Island" type="Node3D" parent="."]
+
+[node name="Block2" type="StaticBody3D" parent="Island" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.5371, 0)
+script = ExtResource("3_hq4kq")
+color = 7
+size = Vector3(50, 15, 50)
+
+[node name="Block3" type="StaticBody3D" parent="Island" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.9145, 0)
+script = ExtResource("3_hq4kq")
+color = 7
+size = Vector3(40, 15, 40)
+
+[node name="Block4" type="StaticBody3D" parent="Island" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.2024, 0)
+script = ExtResource("3_hq4kq")
+color = 7
+size = Vector3(30, 15, 30)
+
+[node name="Island2" type="Node3D" parent="."]
+transform = Transform3D(1.76347, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.165436, -9.19273, 0)
+
+[node name="Block2" parent="Island2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.5371, 0)
+color = 7
+size = Vector3(50, 15, 50)
+
+[node name="Block3" parent="Island2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.9145, 0)
+color = 7
+size = Vector3(40, 15, 40)
+
+[node name="Block4" parent="Island2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.2024, 0)
+color = 7
+size = Vector3(30, 15, 30)
+
+[node name="Chest" type="Node3D" parent="."]
+transform = Transform3D(0.656902, 0, 0.753976, 0, 1, 0, -0.753976, 0, 0.656902, -6.59132, 0, 11.6142)
+
+[node name="Block" parent="Chest" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.1603, 0)
+color = 2
+size = Vector3(2.5, 2, 4)
+
+[node name="Block2" type="StaticBody3D" parent="Chest" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.479458, -0.877565, 0, 0.877565, 0.479458, 0, 0, 0, 1, -0.472287, -8.31767, 0)
+script = ExtResource("3_hq4kq")
+color = 2
+size = Vector3(2.5, 0.5, 4)
+
+[node name="Block3" type="StaticBody3D" parent="Chest" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1501, -9.32437, 0)
+script = ExtResource("3_hq4kq")
+size = Vector3(0.5, 0.5, 0.25)
+
+[node name="Block4" type="StaticBody3D" parent="Chest" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.75249, 0)
+script = ExtResource("3_hq4kq")
+color = 4
+size = Vector3(2, 1.5, 3.5)
+
+[node name="Chest2" type="Node3D" parent="."]
+transform = Transform3D(-0.404136, 0, 0.914699, 0, 1, 0, -0.914699, 0, -0.404136, 5.69381, 0, 10.9665)
+
+[node name="Block" parent="Chest2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.1603, 0)
+color = 2
+size = Vector3(2.5, 2, 4)
+
+[node name="Block2" parent="Chest2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.479458, -0.877565, 0, 0.877565, 0.479458, 0, 0, 0, 1, -0.472287, -8.31767, 0)
+color = 2
+size = Vector3(2.5, 0.5, 4)
+
+[node name="Block3" parent="Chest2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1501, -9.32437, 0)
+color = 5
+size = Vector3(0.5, 0.5, 0.25)
+
+[node name="Block4" parent="Chest2" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.75249, 0)
+color = 4
+size = Vector3(2, 1.5, 3.5)
+
+[node name="Chest3" type="Node3D" parent="."]
+transform = Transform3D(-0.48821, 0, -0.872726, 0, 1, 0, 0.872726, 0, -0.48821, 5.7082, 0, -11.0794)
+
+[node name="Block" parent="Chest3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.1603, 0)
+color = 2
+size = Vector3(2.5, 2, 4)
+
+[node name="Block2" parent="Chest3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.479458, -0.877565, 0, 0.877565, 0.479458, 0, 0, 0, 1, -0.472287, -8.31767, 0)
+color = 2
+size = Vector3(2.5, 0.5, 4)
+
+[node name="Block3" parent="Chest3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1501, -9.32437, 0)
+color = 5
+size = Vector3(0.5, 0.5, 0.25)
+
+[node name="Block4" parent="Chest3" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.75249, 0)
+color = 4
+size = Vector3(2, 1.5, 3.5)
+
+[node name="Chest4" type="Node3D" parent="."]
+transform = Transform3D(0.580163, 0, -0.814501, 0, 1, 0, 0.814501, 0, 0.580163, -5.59403, 0, -10.7872)
+
+[node name="Block" parent="Chest4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.1603, 0)
+color = 2
+size = Vector3(2.5, 2, 4)
+
+[node name="Block2" parent="Chest4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(0.479458, -0.877565, 0, 0.877565, 0.479458, 0, 0, 0, 1, -0.472287, -8.31767, 0)
+color = 2
+size = Vector3(2.5, 0.5, 4)
+
+[node name="Block3" parent="Chest4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1501, -9.32437, 0)
+color = 5
+size = Vector3(0.5, 0.5, 0.25)
+
+[node name="Block4" parent="Chest4" instance=ExtResource("2_0lbg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.75249, 0)
+color = 4
+size = Vector3(2, 1.5, 3.5)

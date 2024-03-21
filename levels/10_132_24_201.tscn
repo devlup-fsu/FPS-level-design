@@ -1,0 +1,660 @@
+[gd_scene load_steps=4 format=3 uid="uid://co4fbyr37np7o"]
+
+[ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="1_swv3e"]
+[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="2_m3h6y"]
+[ext_resource type="Script" path="res://prefabs/Block/Block.gd" id="3_f43ub"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Red" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -295.119, -3.95036, -0.341155)
+
+[node name="Blue" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.263, -4.86406, 3.81217)
+
+[node name="Health_Cabinent4" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, 18.6814, -6.48716, 1.90735e-06)
+
+[node name="HealHurtVolume2" parent="Health_Cabinent4" instance=ExtResource("1_swv3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987974, 2.1422, -3.96172)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Health_Cabinent4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540298, 1.52187, -4.01357)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Health_Cabinent3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9694, -6.32607, 0)
+
+[node name="HealHurtVolume2" parent="Health_Cabinent3" instance=ExtResource("1_swv3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269.988, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Health_Cabinent3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269.54, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="HealHurtVolume" parent="." instance=ExtResource("1_swv3e")]
+transform = Transform3D(13.2, 0, 0, 0, 1, 0, 0, 0, 11.8, 0, -41.0688, 0)
+size = Vector3(200, 50, 200)
+
+[node name="Block2" parent="." instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -291.635, -6.81516, 0.0451084)
+color = 0
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="." instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7306, -6.81516, 4.04511)
+color = 1
+size = Vector3(22.82, 1, 50)
+
+[node name="Block5" parent="." instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -288.391, -3.91957, 0.0451084)
+color = 0
+size = Vector3(1, 5, 5)
+
+[node name="Block6" parent="." instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2185, -3.91957, 4.04511)
+color = 1
+size = Vector3(1, 5, 5)
+
+[node name="Hall2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 2)
+
+[node name="Block5" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 0.4, 15.5583, -1.8877, -13.0433)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block9" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block10" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637939, -1.6721, -18.3991)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block11" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637939, -1.6721, -8.39909)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block12" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.506, 0.637939, -1.6721, 1.60091)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block13" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637939, -1.6721, 11.6009)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block14" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637939, -1.6721, 21.6009)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" type="StaticBody3D" parent="Hall2" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 0.4, 15.5583, -1.8877, 16.9567)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall3" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -227, 2, 2)
+
+[node name="Block5" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 0.4, 53.5583, -1.8877, -13.0433)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block9" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.835, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block10" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block11" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, -8.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block12" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.506, 38.6379, -1.6721, 1.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block13" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block14" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall3" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 0.4, 53.5583, -1.8877, 16.9567)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -227, 2, -47)
+
+[node name="Block7" type="StaticBody3D" parent="Hall" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 53.5583, -1.8877, 1.9567)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" type="StaticBody3D" parent="Hall" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.835, -8.3046, 1.9567)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" type="StaticBody3D" parent="Hall" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, -18.3991)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" type="StaticBody3D" parent="Hall" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, -8.39909)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" type="StaticBody3D" parent="Hall" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 1.60091)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" type="StaticBody3D" parent="Hall" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 11.6009)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" type="StaticBody3D" parent="Hall" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 21.6009)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall4" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -227, 2, 52)
+
+[node name="Block7" parent="Hall4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 53.5583, -1.8877, 1.95671)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.835, -8.3046, 1.9567)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall4" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 38.6379, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4, 2, 52)
+
+[node name="Block7" parent="Hall5" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall5" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall5" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall5" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall5" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall5" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall5" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4, 2, -47)
+
+[node name="Block7" parent="Hall6" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall6" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall6" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall6" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall6" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall6" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall6" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall7" type="Node3D" parent="."]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -37, 2, -76)
+
+[node name="Block7" parent="Hall7" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall7" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall7" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall7" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall7" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall7" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall7" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall8" type="Node3D" parent="."]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -87, 2, -76)
+
+[node name="Block7" parent="Hall8" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall8" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall8" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall8" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall8" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall8" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall8" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall9" type="Node3D" parent="."]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -137, 2, -76)
+
+[node name="Block7" parent="Hall9" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall9" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall9" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall9" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall9" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall9" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall9" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall10" type="Node3D" parent="."]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -186, 2, -76)
+
+[node name="Block7" parent="Hall10" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall10" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall10" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall10" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall10" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall10" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall10" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall11" type="Node3D" parent="."]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -236, 2, -76)
+
+[node name="Block7" parent="Hall11" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall11" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall11" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall11" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall11" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall11" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall11" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall12" type="Node3D" parent="."]
+transform = Transform3D(3.0598e-07, 0, -1, 0, 1, 0, 1, 0, 3.0598e-07, -232.2, 2, 79)
+
+[node name="Block7" parent="Hall12" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall12" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall12" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall12" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall12" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall12" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall12" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall13" type="Node3D" parent="."]
+transform = Transform3D(3.0598e-07, 0, -1, 0, 1, 0, 1, 0, 3.0598e-07, -182.2, 2, 79)
+
+[node name="Block7" parent="Hall13" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall13" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall13" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall13" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall13" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall13" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall13" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall14" type="Node3D" parent="."]
+transform = Transform3D(3.0598e-07, 0, -1, 0, 1, 0, 1, 0, 3.0598e-07, -132.2, 2, 79)
+
+[node name="Block7" parent="Hall14" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall14" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall14" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall14" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall14" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall14" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall14" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall15" type="Node3D" parent="."]
+transform = Transform3D(3.0598e-07, 0, -1, 0, 1, 0, 1, 0, 3.0598e-07, -83.2, 2, 79)
+
+[node name="Block7" parent="Hall15" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall15" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall15" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall15" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall15" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall15" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall15" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Hall16" type="Node3D" parent="."]
+transform = Transform3D(3.0598e-07, 0, -1, 0, 1, 0, 1, 0, 3.0598e-07, -33.2, 2, 79)
+
+[node name="Block7" parent="Hall16" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, 1, 15.5583, -1.8877, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Hall16" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83499, -8.3046, 1.95669)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block" parent="Hall16" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -18.3991)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block2" parent="Hall16" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, -8.39909)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block3" parent="Hall16" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 1.60091)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block4" parent="Hall16" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 11.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block6" parent="Hall16" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(0.0626999, 0, 0, 0, 13.1736, 0, 0, 0, -0.11, 0.637947, -1.6721, 21.6009)
+size = Vector3(22.82, 1, 50)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Block4" type="StaticBody3D" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0.834991, -6.3046, 86.9567)
+script = ExtResource("3_f43ub")
+color = 6
+size = Vector3(22.82, 1, 50)
+
+[node name="Block7" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, -270.165, -6.3046, 83.9567)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block8" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, 0.834991, -6.3046, -80.7283)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block9" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -270.165, -6.3046, -84.3583)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block10" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -252.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block11" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -226.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block12" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -200.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block13" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -174.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block14" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -148.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block15" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -122.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block16" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -96.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block17" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -70.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block18" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -44.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)
+
+[node name="Block19" parent="Node3D" instance=ExtResource("2_m3h6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.484, -18.165, -6.3046, -0.358307)
+size = Vector3(22.82, 1, 50)

@@ -1,0 +1,337 @@
+[gd_scene load_steps=6 format=3 uid="uid://chvn74mcr5o5l"]
+
+[ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="1_h4egh"]
+[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="2_pvcrn"]
+[ext_resource type="Script" path="res://scripts/Skyblox.gd" id="3_2hu55"]
+[ext_resource type="Script" path="res://prefabs/Block/Block.gd" id="3_yy4qs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21fyb"]
+
+[node name="Environment" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.78099, 0)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7962, 0)
+
+[node name="Red" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.2839, 42.2663, -3.93948)
+
+[node name="Blue" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.2697, 41.0122, 0)
+
+[node name="Red Base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.881, 0)
+
+[node name="Block8" parent="Red Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4165, 1.90735e-06, -3.38834)
+color = 2
+size = Vector3(20, 1, 20)
+
+[node name="Block9" parent="Red Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.1801, 0.500002, -3.68181)
+color = 0
+size = Vector3(1, 10, 10)
+
+[node name="Health_Cabinent" type="Node3D" parent="Red Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0278, 0.534302, -3.45029)
+
+[node name="HealHurtVolume2" parent="Red Base/Health_Cabinent" instance=ExtResource("1_h4egh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="Red Base/Health_Cabinent" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="Block" type="StaticBody3D" parent="Red Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.0121123, -0.999927, 0, 0.999927, 0.0121123, 0, 0, 0, 3.18075, -2.59457, 10.8508, -3.37691)
+script = ExtResource("3_yy4qs")
+color = 7
+size = Vector3(20, 1, 20)
+
+[node name="Block2" type="StaticBody3D" parent="Red Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1.24239, 0.110911, -0.00530499, -1.73482, 0.0794262, 0.0094212, 0.0226502, -0.000157923, 1.01257, -30.3492, -15.5803, -3.37484)
+script = ExtResource("3_yy4qs")
+color = 2
+size = Vector3(20, 1, 20)
+
+[node name="Blue Base" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 42.4288, 0)
+
+[node name="Block8" parent="Blue Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4165, 1.90735e-06, -3.38834)
+color = 3
+size = Vector3(20, 1, 20)
+
+[node name="Block9" parent="Blue Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.1801, 0.500002, -3.68181)
+color = 1
+size = Vector3(1, 10, 10)
+
+[node name="Block" type="StaticBody3D" parent="Blue Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1.12135, 2.76665, -3.70819e-08, -1.59209, 1.94862, -7.1474e-08, -7.22112e-08, 2.41868e-07, 1, -31.788, -16.6159, -3.35317)
+script = ExtResource("3_yy4qs")
+color = 3
+size = Vector3(20, 1, 20)
+
+[node name="TrampolineBlock" type="StaticBody3D" parent="Blue Base" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(2.44921, 0.0170689, -8.32784e-08, -0.0123539, 3.38396, -1.60516e-07, 8.99381e-08, 2.42498e-07, 2.2458, 1.31814, -43.7634, -0.200541)
+script = ExtResource("3_yy4qs")
+color = 3
+size = Vector3(20, 1, 20)
+
+[node name="Area3D" type="Area3D" parent="Blue Base/TrampolineBlock"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blue Base/TrampolineBlock/Area3D"]
+transform = Transform3D(26.479, 2.32829e-10, 1.81899e-12, -7.45059e-08, 0.364029, 4.54747e-13, -1.93268e-12, 1.06581e-14, 27.502, -1.78814e-07, 0.935607, -6.70552e-08)
+shape = SubResource("BoxShape3D_21fyb")
+
+[node name="Skyblox" type="Node3D" parent="."]
+transform = Transform3D(0.333103, 0.00804561, -0.942856, -1.50991e-07, -0.999964, -0.00853297, -0.94289, 0.0028425, -0.33309, 0, 0, 0)
+script = ExtResource("3_2hu55")
+
+[node name="Block4" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.458515, -0.525882, 0.716388, 0.78701, 0.614704, -0.0524781, -0.412769, 0.587867, 0.695726, -193.846, 8.00744, -123.494)
+size = Vector3(100, 100, 100)
+
+[node name="Block" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.441872, 0.883144, -0.157496, -0.825925, 0.331981, -0.455671, -0.350137, 0.331428, 0.876105, -193.846, -56.1344, 25.0205)
+size = Vector3(100, 100, 100)
+
+[node name="Block2" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.100241, -0.493967, 0.863683, 0.927871, 0.359773, 0.0980736, -0.359175, 0.791556, 0.494402, -359.31, 55.3376, 170.777)
+size = Vector3(100, 100, 100)
+
+[node name="Block3" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.932713, -0.256534, 0.253451, 0.288983, 0.952121, -0.0997691, -0.215722, 0.166299, 0.962189, 3.81522, -27.4353, -328.38)
+size = Vector3(100, 100, 100)
+
+[node name="Block5" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.726322, -0.449459, 0.520042, 0.581439, 0.805263, -0.116105, -0.366586, 0.386702, 0.846213, 261.092, 155.533, -7.01816)
+size = Vector3(100, 100, 100)
+
+[node name="Block6" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.657637, 0.64558, -0.388251, -0.480478, 0.75639, 0.443864, 0.580219, -0.105355, 0.807617, 234.146, -14.4762, 200.911)
+size = Vector3(100, 100, 100)
+
+[node name="Block7" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 0.768261, 0.640136, 0, -0.640136, 0.768261, 11.741, 55.3376, 354.328)
+size = Vector3(100, 100, 100)
+
+[node name="Block8" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.205803, -0.974739, 0.0867745, 0.185887, -0.0481192, -0.981392, 0.960776, 0.218104, 0.171288, -33.3858, 248.791, -15.0115)
+size = Vector3(100, 100, 100)
+
+[node name="Block9" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.879234, 0.242894, -0.409818, -0.101087, -0.74554, -0.658749, -0.465542, 0.620622, -0.630951, -94.6042, 123.332, -96.7628)
+size = Vector3(100, 100, 100)
+
+[node name="Block10" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(-0.130943, -0.964006, 0.231403, 0.380181, -0.264395, -0.886317, 0.915596, -0.0280817, 0.401117, -341.65, 126.61, -94.1268)
+size = Vector3(100, 100, 100)
+
+[node name="Block11" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.633438, -0.689813, -0.350594, -0.331419, 0.167563, -0.928484, 0.699227, 0.70433, -0.122476, 237.281, 283.422, 73.5571)
+size = Vector3(100, 100, 100)
+
+[node name="Block12" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.451702, -0.886492, -0.100486, -0.0430691, 0.0908327, -0.994934, 0.891129, 0.453742, 0.00284922, 134.737, -96.4099, 292.999)
+size = Vector3(100, 100, 100)
+
+[node name="Block13" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.323998, 0.160953, -0.932266, -0.914963, -0.197258, -0.35204, -0.240559, 0.967049, 0.0833546, 66.3472, -267.627, 95.8406)
+size = Vector3(100, 100, 100)
+
+[node name="Block14" parent="Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.51975, 0.421525, 0.78795, 0.448834, -204.932, -241.949, 35.648)
+size = Vector3(100, 100, 100)
+
+[node name="Skyblox" type="Node3D" parent="Skyblox"]
+transform = Transform3D(0.334052, 0.00899193, -0.942511, -1.50989e-07, -0.999955, -0.00954, -0.942555, 0.003187, -0.334037, 0, 0, 0)
+script = ExtResource("3_2hu55")
+
+[node name="Block4" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.458515, -0.525882, 0.716388, 0.78701, 0.614704, -0.0524781, -0.412769, 0.587867, 0.695726, -193.846, 8.00744, -123.494)
+size = Vector3(100, 100, 100)
+
+[node name="Block" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.441872, 0.883144, -0.157496, -0.825925, 0.331981, -0.455671, -0.350137, 0.331428, 0.876105, -193.846, -56.1344, 25.0205)
+size = Vector3(100, 100, 100)
+
+[node name="Block2" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.100241, -0.493967, 0.863683, 0.927871, 0.359773, 0.0980736, -0.359175, 0.791556, 0.494402, -359.31, 55.3376, 170.777)
+size = Vector3(100, 100, 100)
+
+[node name="Block3" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.932713, -0.256534, 0.253451, 0.288983, 0.952121, -0.0997691, -0.215722, 0.166299, 0.962189, 3.81522, -27.4353, -328.38)
+size = Vector3(100, 100, 100)
+
+[node name="Block5" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.726322, -0.449459, 0.520042, 0.581439, 0.805263, -0.116105, -0.366586, 0.386702, 0.846213, 261.092, 155.533, -7.01816)
+size = Vector3(100, 100, 100)
+
+[node name="Block6" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.657637, 0.64558, -0.388251, -0.480478, 0.75639, 0.443864, 0.580219, -0.105355, 0.807617, 234.146, -14.4762, 200.911)
+size = Vector3(100, 100, 100)
+
+[node name="Block7" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 0.768261, 0.640136, 0, -0.640136, 0.768261, 11.741, 55.3376, 354.328)
+size = Vector3(100, 100, 100)
+
+[node name="Block8" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.205803, -0.974739, 0.0867745, 0.185887, -0.0481192, -0.981392, 0.960776, 0.218104, 0.171288, -33.3858, 248.791, -15.0115)
+size = Vector3(100, 100, 100)
+
+[node name="Block9" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.879234, 0.242894, -0.409818, -0.101087, -0.74554, -0.658749, -0.465542, 0.620622, -0.630951, -94.6042, 123.332, -96.7628)
+size = Vector3(100, 100, 100)
+
+[node name="Block10" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(-0.130943, -0.964006, 0.231403, 0.380181, -0.264395, -0.886317, 0.915596, -0.0280817, 0.401117, -341.65, 126.61, -94.1268)
+size = Vector3(100, 100, 100)
+
+[node name="Block11" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.633438, -0.689813, -0.350594, -0.331419, 0.167563, -0.928484, 0.699227, 0.70433, -0.122476, 237.281, 283.422, 73.5571)
+size = Vector3(100, 100, 100)
+
+[node name="Block12" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.451702, -0.886492, -0.100486, -0.0430691, 0.0908327, -0.994934, 0.891129, 0.453742, 0.00284922, 134.737, -96.4099, 292.999)
+size = Vector3(100, 100, 100)
+
+[node name="Block13" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.323998, 0.160953, -0.932266, -0.914963, -0.197258, -0.35204, -0.240559, 0.967049, 0.0833546, 66.3472, -267.627, 95.8406)
+size = Vector3(100, 100, 100)
+
+[node name="Block14" parent="Skyblox/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.51975, 0.421525, 0.78795, 0.448834, -204.932, -241.949, 35.648)
+size = Vector3(100, 100, 100)
+
+[node name="Skyblox2" type="Node3D" parent="."]
+transform = Transform3D(-0.76404, -0.0549759, 0.642822, -1.50446e-07, -0.996363, -0.0852118, 0.645169, -0.0651053, 0.76126, 0, 0, 0)
+script = ExtResource("3_2hu55")
+
+[node name="Block4" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.458515, -0.525882, 0.716388, 0.78701, 0.614704, -0.0524781, -0.412769, 0.587867, 0.695726, -193.846, 8.00744, -123.494)
+size = Vector3(100, 100, 100)
+
+[node name="Block" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.441872, 0.883144, -0.157496, -0.825925, 0.331981, -0.455671, -0.350137, 0.331428, 0.876105, -193.846, -56.1344, 25.0205)
+size = Vector3(100, 100, 100)
+
+[node name="Block2" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.100241, -0.493967, 0.863683, 0.927871, 0.359773, 0.0980736, -0.359175, 0.791556, 0.494402, -359.31, 55.3376, 170.777)
+size = Vector3(100, 100, 100)
+
+[node name="Block3" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.932713, -0.256534, 0.253451, 0.288983, 0.952121, -0.0997691, -0.215722, 0.166299, 0.962189, 3.81522, -27.4353, -328.38)
+size = Vector3(100, 100, 100)
+
+[node name="Block5" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.726322, -0.449459, 0.520042, 0.581439, 0.805263, -0.116105, -0.366586, 0.386702, 0.846213, 261.092, 155.533, -7.01816)
+size = Vector3(100, 100, 100)
+
+[node name="Block6" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.657637, 0.64558, -0.388251, -0.480478, 0.75639, 0.443864, 0.580219, -0.105355, 0.807617, 234.146, -14.4762, 200.911)
+size = Vector3(100, 100, 100)
+
+[node name="Block7" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 0.768261, 0.640136, 0, -0.640136, 0.768261, 11.741, 55.3376, 354.328)
+size = Vector3(100, 100, 100)
+
+[node name="Block8" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.205803, -0.974739, 0.0867745, 0.185887, -0.0481192, -0.981392, 0.960776, 0.218104, 0.171288, -33.3858, 248.791, -15.0115)
+size = Vector3(100, 100, 100)
+
+[node name="Block9" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.879234, 0.242894, -0.409818, -0.101087, -0.74554, -0.658749, -0.465542, 0.620622, -0.630951, -94.6042, 123.332, -96.7628)
+size = Vector3(100, 100, 100)
+
+[node name="Block10" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(-0.130943, -0.964006, 0.231403, 0.380181, -0.264395, -0.886317, 0.915596, -0.0280817, 0.401117, -341.65, 126.61, -94.1268)
+size = Vector3(100, 100, 100)
+
+[node name="Block11" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.633438, -0.689813, -0.350594, -0.331419, 0.167563, -0.928484, 0.699227, 0.70433, -0.122476, 237.281, 283.422, 73.5571)
+size = Vector3(100, 100, 100)
+
+[node name="Block12" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.451702, -0.886492, -0.100486, -0.0430691, 0.0908327, -0.994934, 0.891129, 0.453742, 0.00284922, 134.737, -96.4099, 292.999)
+size = Vector3(100, 100, 100)
+
+[node name="Block13" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.323998, 0.160953, -0.932266, -0.914963, -0.197258, -0.35204, -0.240559, 0.967049, 0.0833546, 66.3472, -267.627, 95.8406)
+size = Vector3(100, 100, 100)
+
+[node name="Block14" parent="Skyblox2" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.51975, 0.421525, 0.78795, 0.448834, -204.932, -241.949, 35.648)
+size = Vector3(100, 100, 100)
+
+[node name="Skyblox" type="Node3D" parent="Skyblox2"]
+transform = Transform3D(0.334052, 0.00899193, -0.942511, -1.50989e-07, -0.999955, -0.00954, -0.942555, 0.003187, -0.334037, 0, 0, 0)
+script = ExtResource("3_2hu55")
+
+[node name="Block4" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.458515, -0.525882, 0.716388, 0.78701, 0.614704, -0.0524781, -0.412769, 0.587867, 0.695726, -193.846, 8.00744, -123.494)
+size = Vector3(100, 100, 100)
+
+[node name="Block" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.441872, 0.883144, -0.157496, -0.825925, 0.331981, -0.455671, -0.350137, 0.331428, 0.876105, -193.846, -56.1344, 25.0205)
+size = Vector3(100, 100, 100)
+
+[node name="Block2" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.100241, -0.493967, 0.863683, 0.927871, 0.359773, 0.0980736, -0.359175, 0.791556, 0.494402, -359.31, 55.3376, 170.777)
+size = Vector3(100, 100, 100)
+
+[node name="Block3" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.932713, -0.256534, 0.253451, 0.288983, 0.952121, -0.0997691, -0.215722, 0.166299, 0.962189, 3.81522, -27.4353, -328.38)
+size = Vector3(100, 100, 100)
+
+[node name="Block5" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.726322, -0.449459, 0.520042, 0.581439, 0.805263, -0.116105, -0.366586, 0.386702, 0.846213, 261.092, 155.533, -7.01816)
+size = Vector3(100, 100, 100)
+
+[node name="Block6" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.657637, 0.64558, -0.388251, -0.480478, 0.75639, 0.443864, 0.580219, -0.105355, 0.807617, 234.146, -14.4762, 200.911)
+size = Vector3(100, 100, 100)
+
+[node name="Block7" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(1, 0, 0, 0, 0.768261, 0.640136, 0, -0.640136, 0.768261, 11.741, 55.3376, 354.328)
+size = Vector3(100, 100, 100)
+
+[node name="Block8" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.205803, -0.974739, 0.0867745, 0.185887, -0.0481192, -0.981392, 0.960776, 0.218104, 0.171288, -33.3858, 248.791, -15.0115)
+size = Vector3(100, 100, 100)
+
+[node name="Block9" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.879234, 0.242894, -0.409818, -0.101087, -0.74554, -0.658749, -0.465542, 0.620622, -0.630951, -94.6042, 123.332, -96.7628)
+size = Vector3(100, 100, 100)
+
+[node name="Block10" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(-0.130943, -0.964006, 0.231403, 0.380181, -0.264395, -0.886317, 0.915596, -0.0280817, 0.401117, -341.65, 126.61, -94.1268)
+size = Vector3(100, 100, 100)
+
+[node name="Block11" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.633438, -0.689813, -0.350594, -0.331419, 0.167563, -0.928484, 0.699227, 0.70433, -0.122476, 237.281, 283.422, 73.5571)
+size = Vector3(100, 100, 100)
+
+[node name="Block12" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.451702, -0.886492, -0.100486, -0.0430691, 0.0908327, -0.994934, 0.891129, 0.453742, 0.00284922, 134.737, -96.4099, 292.999)
+size = Vector3(100, 100, 100)
+
+[node name="Block13" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.323998, 0.160953, -0.932266, -0.914963, -0.197258, -0.35204, -0.240559, 0.967049, 0.0833546, 66.3472, -267.627, 95.8406)
+size = Vector3(100, 100, 100)
+
+[node name="Block14" parent="Skyblox2/Skyblox" instance=ExtResource("2_pvcrn")]
+transform = Transform3D(0.685075, 0.0475781, -0.726917, -0.594129, 0.613899, -0.51975, 0.421525, 0.78795, 0.448834, -204.932, -241.949, 35.648)
+size = Vector3(100, 100, 100)
+
+[node name="HealHurtVolume" parent="." instance=ExtResource("1_h4egh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.0688, 0)
+size = Vector3(200, 50, 200)
+
+[connection signal="body_entered" from="Blue Base/TrampolineBlock/Area3D" to="Blue Base/TrampolineBlock" method="_on_area_3d_body_entered"]

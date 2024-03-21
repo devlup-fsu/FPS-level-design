@@ -1,0 +1,139 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv02sxr7bhh28"]
+
+[ext_resource type="PackedScene" uid="uid://caha4aqr2nnpy" path="res://prefabs/HealHurtBlock/HealHurtVolume.tscn" id="1_w5rnq"]
+[ext_resource type="PackedScene" uid="uid://dwyluljtw15dg" path="res://prefabs/Block/Block.tscn" id="2_81ypd"]
+[ext_resource type="Script" path="res://prefabs/Block/Block.gd" id="3_50x8b"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="HealHurtVolume" parent="." instance=ExtResource("1_w5rnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.0688, 0)
+size = Vector3(200, 50, 200)
+
+[node name="RedBase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35027, 30.9752, 1.04818)
+
+[node name="Block5" parent="RedBase" instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3911, -3.91957, 0.0451084)
+color = 0
+size = Vector3(1, 5, 5)
+
+[node name="Block2" parent="RedBase" instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6353, -6.81516, 0.0451083)
+color = 0
+size = Vector3(10, 1, 10)
+
+[node name="Health_Cabinent3" type="Node3D" parent="RedBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9694, -6.32607, 0)
+
+[node name="HealHurtVolume2" parent="RedBase/Health_Cabinent3" instance=ExtResource("1_w5rnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="RedBase/Health_Cabinent3" instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="RedSpawn" type="Node3D" parent="RedBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.119, -2.95036, -0.341155)
+
+[node name="BlueBase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.42329, 31.0706, 11.6873)
+
+[node name="Block6" parent="BlueBase" instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2185, -3.91957, 0.0451084)
+color = 1
+size = Vector3(1, 5, 5)
+
+[node name="Block3" parent="BlueBase" instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7306, -6.81516, 0.0451084)
+color = 1
+size = Vector3(10, 1, 10)
+
+[node name="Health_Cabinent4" type="Node3D" parent="BlueBase"]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, 18.6814, -6.48716, 1.90735e-06)
+
+[node name="HealHurtVolume2" parent="BlueBase/Health_Cabinent4" instance=ExtResource("1_w5rnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987975, 2.1422, 0.0382771)
+affect = 3.0
+size = Vector3(2.225, 4.115, 3.345)
+
+[node name="Block2" parent="BlueBase/Health_Cabinent4" instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540299, 1.52187, -0.0135713)
+color = 7
+size = Vector3(1, 3, 2)
+
+[node name="BlueSpawn" type="Node3D" parent="BlueBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3237, -3.86406, -0.176192)
+
+[node name="Block2" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02219, 4.62081, 6.42456)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 40, 20)
+
+[node name="Block" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4794, 3.76551, -2.68468)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 15)
+
+[node name="Block3" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.759372, 4.0395, 13.9719)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 15)
+
+[node name="Block4" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11102, 5.84084, 11.4025)
+script = ExtResource("3_50x8b")
+size = Vector3(10, 50, 10)
+
+[node name="Block5" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4321, 5.84084, 1.72148)
+script = ExtResource("3_50x8b")
+size = Vector3(10, 50, 10)
+
+[node name="Block6" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.16542, 3.76551, -6.50416)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 7)
+
+[node name="Block7" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1254, 4.04327, 17.9692)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 7)
+
+[node name="Block8" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1509, -0.35578, 3.52553)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 15)
+
+[node name="Block9" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4656, -0.398741, 8.83185)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 17)
+
+[node name="Block10" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1622, 1.49525, -2.49406)
+script = ExtResource("3_50x8b")
+size = Vector3(7, 50, 7)
+
+[node name="Block11" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00696, 7.96349, 13.9724)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 5)
+
+[node name="Block12" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02219, 7.96349, -2.91384)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 50, 5)
+
+[node name="Block13" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02219, 31.9204, 6.42456)
+script = ExtResource("3_50x8b")
+size = Vector3(20, 2, 20)
+
+[node name="Block14" type="StaticBody3D" parent="." instance=ExtResource("2_81ypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3897, 1.86017, 14.2064)
+script = ExtResource("3_50x8b")
+size = Vector3(7, 50, 7)
